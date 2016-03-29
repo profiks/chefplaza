@@ -1,8 +1,8 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic);@import url("font-awesome.min.css");@import url("addOnsCSS/customCheckboxRadio.css");@import url("addOnsCSS/customSelect.css");html{position:relative;min-height:100%;overflow-x:hidden;}
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic);@import url("font-awesome.min.css");@import url("addonscss/customcheckboxradio.css");@import url("addOnsCSS/customSelect.css");html{position:relative;min-height:100%;overflow-x:hidden;}
 body{padding-top:80px;padding-bottom:150px;background-color:#f2f2f2;font-family:Lato;letter-spacing:0.01em;}
 select{cursor:pointer;}
-@font-face{font-family:'Lato Black';src:url('../fonts/Lato-Black.ttf');}
-@font-face{font-family:'Lato';src:url('../fonts/Lato-Regular.ttf');}
+@font-face{font-family:'Lato Black';src:url('../fonts/lato-black.ttf');}
+@font-face{font-family:'Lato';src:url('../fonts/lato-regular.ttf');}
 .date-input-container{position:relative;}
 .has-feedback .form-control{padding-right:38px;}
 .body-content{}
@@ -135,15 +135,15 @@ a{text-transform:uppercase;}
 #chef .social-network{font-size:12px;padding:8px 30px;width:125px;}
 #chef .tab-content .menu-line h3{font-weight:bold;}
 .header_left{}
-.header_left img{content:url(../Content/images/gradient-md.png);margin-left:-405px;position:absolute;}
-.left-bg{background:url(../Content/images/gradient-md.png) no-repeat;background-size:cover;height:240px;min-width:700px;position:absolute;top:50px;left:0px;margin-left:0px;}
+.header_left img{content:url(images/gradient-md.png);margin-left:-405px;position:absolute;}
+.left-bg{background:url(images/gradient-md.png) no-repeat;background-size:cover;height:240px;min-width:700px;position:absolute;top:50px;left:0px;margin-left:0px;}
 .header_right{height:240px;background-image:url('images/header-main-background.png');background-size:cover;margin-right:-400px;}
 .menusearch-page{padding-bottom:40px;}
 .menusearch-page a{text-transform:none;text-decoration:underline;color:black;}
 .menusearch-page a:hover{text-decoration:underline;color:black;cursor:pointer;}
 .menusearch-header{height:240px;background:linear-gradient(to right, #6eb17e 0%,#407c58 100%,#407c58 100%,#407c58 100%);}
 .menusearch-header-left{height:240px;padding:30px 30px 30px 0;}
-.menusearch-header-main{position:absolute;width:100%;height:240px;background:url(../Content/images/header-main-background.png) no-repeat;background-size:cover;padding:30px;}
+.menusearch-header-main{position:absolute;width:100%;height:240px;background:url(images/header-main-background.png) no-repeat;background-size:cover;padding:30px;}
 .menusearch-header #searchHeader{position:static;}
 .menusearch-header-main .searchresult-text{margin-top:45px;}
 .menusearch-header-main .searchresult-text h1{color:#fff;}
@@ -238,7 +238,7 @@ input:checked + label{color:#d9534f;}
 .menu-header-top a{text-decoration:underline;font-size:12px;font-weight:bold;}
 .menu-header-top a.go-back{color:#000;}
 .menu-header-top a.more-menus{color:#e54;}
-.menu-header-main{background:url(../Content/images/menu-bg-test.jpg) no-repeat;background-size:cover;}
+.menu-header-main{background:url(images/menu-bg-test.jpg) no-repeat;background-size:cover;}
 .menu-header-main .menu-image{width:100%;height:530px;background-size:cover;background-repeat:no-repeat;}
 .menu-info-general h1{color:#fff;margin:0;}
 .col-md-6.menu-info{padding-top:30px;}
