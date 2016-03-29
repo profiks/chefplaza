@@ -29,6 +29,8 @@ ChefPlaza.MenuViewModel = function (menuId) {
                     
                 },
                 error: function () {
+                    $('#requestMenuDialog').modal('hide');
+                    $('#requestMenuDialogConfirmation').modal('show');
                     console.error('request not sent');
                 }
             });
