@@ -771,10 +771,12 @@ Sophie kwam binnen met al haar spullen, verzorgde een mooie, als in een restaura
                     $('.nav-tabs a[href="#review"]').tab('show');
                 }                
             }
-            $('#requestMenuDialog').on('shown.bs.modal', function () {
-                $('#date').datepicker('remove');
-                $('#date').datepicker('update');
-            });
+            
+            var today = new Date();
+            $("#date").datepicker({startDate: today, format: "dd-mm-yyyy"}).on('show.bs.modal', function(event) {
+                // prevent datepicker from firing bootstrap modal "show.bs.modal"
+                event.stopPropagation();
+             });
             
            
         });
