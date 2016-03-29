@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="nl-NL">
 <head>
@@ -14,36 +13,13 @@
     <link rel="stylesheet" href="Content/bootstrap-datepicker3.min.css">
     <link rel="stylesheet" href="Content/jquery.range.css" >
     <link rel="stylesheet" href="Content/Site.css">
+    <link rel="stylesheet" href="Content/steps-form-custom-styles.css">
     <link rel="stylesheet" href="Content/custom-bootstrap-slider.css">
     <link rel="stylesheet" href="Content/custom-select2-bootstrap.css">
-
-    
-
-    <script src="Scripts/min-js/jquery-2.1.4.js"></script>
-    <script src="Scripts/spin.min.js"></script>
-
-    <script src="Scripts/globalize.js"></script>
-
-    <script src="Scripts/jquery.validate.js"></script>
-    <script src="Scripts/jquery.validate.unobtrusive.js"></script>
-    <script src="Scripts/jquery.validate.globalize.js"></script>
-
-    <script src="Scripts/min-js/bootstrap.js"></script>
-    <script src="Scripts/min-js/bootstrap-datepicker.js"></script>
-    <script src="Scripts/min-js/respond.js"></script>
-
-
-    
-    
-    <script src="Scripts/custom-script.js"></script>
-
-    <script src="Scripts/min-js/modernizr-2.6.2.js"></script>
-
   
 </head>
 <body>
-    
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
@@ -346,22 +322,34 @@ Sophie kwam binnen met al haar spullen, verzorgde een mooie, als in een restaura
             </div>
         </div>
     </div>
-    <div id="requestMenuDialog" class="modal fade menurequest" tabindex="-1" role="dialog" aria-labelledby="label">
+  
+  
+         <!-- *****************************   test modal ****************************************  -->     
+     <div id="requestMenuDialog" class="modal fade menurequest" tabindex="-1" role="dialog" aria-labelledby="label">
         <div class="modal-dialog" role="document">
-            <div class="modal-content modal-content-dander">
-                <div class="modal-header">
-                    <div class="menu-info-general">
+            <div class="modal-content order-modal">               
+                <div class="modal-body">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                   
+                    <input id="RedirectToThanks" name="RedirectToThanks" type="hidden" value="/Bedankt/" />
+                    <div class="request-form">
+                        
+                        <!-- *************************   2 step form ****************** -->
+                         <form id="orderForm" class="form-horizontal" data-bind="submit: submitRequest" novalidate="novalidate">
+    
+            
+           <h3 style="display:none">Order details</h3>
+        <section class="col-xs-12 modal-step-1 steps-section">
+          <div class="menu-info-general">
                         <h1>Soopholenghi&#39;s Menu Vlees</h1>
                         <div class="price-area">
                             <span>&euro; </span>
                             <span class="price">93,00 </span>
                             
                         </div>
-                        <span class="persons">/per persoon</span>
+                        <span class="persons">/ per persoon</span>
                         <div class="rating" data-bind="template: { name: 'rating-template', data: 5 }"></div>
                     </div>
-                </div>
-                <div class="modal-body">
                     <div class="menu-courses-area">
                         <div class="menu-courses">
                                 <div class="row">
@@ -390,106 +378,127 @@ Sophie kwam binnen met al haar spullen, verzorgde een mooie, als in een restaura
                                 </div>
                         </div>
                     </div>
-                    <input id="RedirectToThanks" name="RedirectToThanks" type="hidden" value="/Bedankt/" />
-                    <div class="request-form">
-                        <form class="form-horizontal" data-bind="submit: submitRequest">
-                            <input name="__RequestVerificationToken" type="hidden" value="rcyzXG5ToaIi2NrBJjnaO3dAzK1OiRSTJ4cnGaDXmYNZLGyYWNVYLJg26db8oFQHSrcfYHwYg9p7ij6imOXnl1Xt11voTlx-_-MM230_3Do1" />
+           <input name="__RequestVerificationToken" type="hidden" value="rcyzXG5ToaIi2NrBJjnaO3dAzK1OiRSTJ4cnGaDXmYNZLGyYWNVYLJg26db8oFQHSrcfYHwYg9p7ij6imOXnl1Xt11voTlx-_-MM230_3Do1">    
+                           <div class="col-sm-12">
                             <div class="form-group">
-                                <label for="location" class="col-sm-1 control-label"><img src="Content/images/cp_selectLocationIcon.png" /></label>
-                                <div class="col-sm-7">
-                                    <select class="form-control input-lg" data-val="true" data-val-required="The Location field is required." id="location" name="MenuRequest.Location"><option>Noord-Holland</option>
-<option>Zuid-Holland</option>
-<option>Utrecht</option>
-<option>Overijssel</option>
-<option>Drenthe</option>
-<option>Gelderland</option>
-<option>Noord-Brabant</option>
-<option>Limburg</option>
-<option>Zeeland</option>
-<option>Friesland</option>
-<option>Groningen</option>
-<option>Flevoland</option>
-<option>Antwerpen</option>
-<option>Oost-Vlaanderen</option>
-<option>Vlaams-Brabant</option>
-<option>West-Vlaanderen</option>
-<option>Waals-Brabant</option>
-<option>Luik</option>
-<option>Luxemburg</option>
-<option>Namen</option>
-</select>
-                                </div>
-                                <label for="persons" class="col-sm-1 control-label"><img src="Content/images/cp_selectGuestAmountIcon.png"></label>
-                                <div class="col-sm-3">
-                                    <input class="form-control input-lg text-box single-line" data-val="true" data-val-number="The field PersonsCount must be a number." data-val-required="The PersonsCount field is required." id="persons" name="MenuRequest.PersonsCount" type="number" value="" />
+                                <label for="location" class="inline-img-label control-label"><i class="fa fa-map-marker"></i></label>
+                                    <select class="form-control input-lg valid" data-val="true" data-val-required="The Location field is required." id="location" name="MenuRequest.Location" aria-required="true" aria-invalid="false" aria-describedby="location-error"><option>Noord-Holland</option>
+                                        <option>Zuid-Holland</option>
+                                        <option>Utrecht</option>
+                                        <option>Overijssel</option>
+                                        <option>Drenthe</option>
+                                        <option>Gelderland</option>
+                                        <option>Noord-Brabant</option>
+                                        <option>Limburg</option>
+                                        <option>Zeeland</option>
+                                        <option>Friesland</option>
+                                        <option>Groningen</option>
+                                        <option>Flevoland</option>
+                                        <option>Antwerpen</option>
+                                        <option>Oost-Vlaanderen</option>
+                                        <option>Vlaams-Brabant</option>
+                                        <option>West-Vlaanderen</option>
+                                        <option>Waals-Brabant</option>
+                                        <option>Luik</option>
+                                        <option>Luxemburg</option>
+                                        <option>Namen</option>
+                                    </select>
+                                </div>                                
+                            </div>
+                            
+                            <div class="col-sm-6">
+                                <div class="form-group input-half-left">
+                               <label for="persons" class="inline-img-label control-label"><img src="Content/images/cp_selectGuestAmountIcon.png"></label>
+                                    <input class="form-control input-lg text-box single-line" data-val="true" data-val-number="The field Persons Count must be a number." data-val-required="The Persons Count field is required." id="persons" name="MenuRequest.PersonsCount" placeholder="Amount of guests" type="number" value="">
                                     <span class="field-validation-valid text-danger" data-valmsg-for="MenuRequest.PersonsCount" data-valmsg-replace="true"></span>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="date" class="col-sm-1 control-label"><img src="Content/images/cp_selectDateIcon.png"></label>
-                                <div class="col-sm-3">
-                                    
-<input class="form-control input-lg" data-date-format="d-m-yyyy" data-provide="datepicker" data-val="true" data-val-date="The field Date must be a date." data-val-required="The Date field is required." id="date" name="MenuRequest.Date" placeholder="Datum" type="text" value="" />
+                            
+                            <div class="col-sm-6">
+                                <div class="form-group input-half-right">
+                                  <label for="date" class="inline-img-label control-label"><i class="fa fa-calendar"></i></label>
 
-                                    <span class="field-validation-valid text-danger" data-valmsg-for="MenuRequest.Date" data-valmsg-replace="true"></span>
-                                </div>
-                            </div>
-                            <hr />
-                            <div class="form-group">
-                                <label for="phone" class="col-sm-1 control-label"><i class="fa fa-phone"></i></label>
-                                <div class="col-sm-7">
-                                    <input class="form-control input-lg text-uppercase text-box single-line" data-val="true" data-val-required="The Phone field is required." id="phone" name="MenuRequest.Phone" placeholder="telefoonnummer" type="tel" value="" />
-                                    <span class="field-validation-valid text-danger" data-valmsg-for="MenuRequest.Phone" data-valmsg-replace="true"></span>
-                                </div>
+
+
+                                <input class="form-control input-lg" data-date-format="d-m-yyyy" data-provide="datepicker" data-val="true" data-val-date="The field Date must be a date." data-val-required="The Date field is required." id="date" name="MenuRequest.Date" placeholder="Datum" type="text" value="">
+                                <span class="field-validation-valid text-danger" data-valmsg-for="MenuRequest.Date" data-valmsg-replace="true">
+                               </div>
                             </div>
                             
-                            <div class="form-group">
-                                <label for="name" class="col-sm-1 control-label"><i class="fa fa-envelope"></i></label>
-                                <div class="col-sm-11">
-                                    <input class="form-control input-lg text-uppercase text-box single-line" data-val="true" data-val-required="The Name field is required." id="name" name="MenuRequest.Name" placeholder="naam" type="text" value="" />
-                                    <span class="field-validation-valid text-danger" data-valmsg-for="MenuRequest.Name" data-valmsg-replace="true"></span>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="email" class="col-sm-1 control-label"><i class="fa fa-envelope"></i></label>
-                                <div class="col-sm-11">
-                                    <input class="form-control input-lg text-uppercase text-box single-line" data-val="true" data-val-required="The Email field is required." id="email" name="MenuRequest.Email" placeholder="emailadres" type="email" value="" />
-                                    <span class="field-validation-valid text-danger" data-valmsg-for="MenuRequest.Email" data-valmsg-replace="true"></span>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="comment" class="col-sm-1 control-label"><i class="fa fa-file"></i></label>
-                                <div class="col-sm-11">
-                                    <textarea class="form-control input-lg text-box multi-line" id="comment" name="MenuRequest.Comment" placeholder="BERICHT (Wat is de gelegenheid? Speciale wensen)" rows="4">
-</textarea>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="reset" class="font-bold btn btn-gray btn-round-xlg text-uppercase" data-dismiss="modal">annuleren</button>
-                                <button type="submit" class="font-bold btn btn-danger btn-round-xlg text-uppercase">aanvragen</button>
-                            </div>
-                        </form>
+                           <div class="modal-footer col-sm-12">
+        <button type="reset" class="font-bold btn btn-gray btn-round-xlg text-uppercase pull-left" data-step="reset">annuleren</button>
+        <a class="font-bold btn btn-danger btn-round-xlg text-uppercase pull-right" data-step="next">nex step <i class="fa fa-long-arrow-right"></i></a>
+        
+                           </div>
+        </section>
+        <h3 style="display:none">contact details</h3>
+    <section class="col-xs-12 modal-step-2  steps-section">
+           
+               <div class="col-sm-12">
+                    <div class="form-group">
+                    <label for="name" class="inline-img-label control-label"><i class="fa fa-user"></i></label>
+                                
+                    <input class="form-control input-lg text-uppercase text-box single-line" data-val="true" data-val-required="The Name field is required." id="name" name="MenuRequest.Name" placeholder="Naam" type="text" value="">
+                    <span class="field-validation-valid text-danger" data-valmsg-for="MenuRequest.Name" data-valmsg-replace="true"></span>
+                               
+                    </div>
+               </div>
+           
+                <div class="col-sm-6">
+                    <div class="form-group input-half-left">
+                                <label for="phone" class="inline-img-label control-label"><i class="fa fa-phone"></i></label>
+                                <input class="form-control input-lg text-uppercase text-box single-line" data-val="true" data-val-required="The Phone field is required." data-val-number="The field Phone must be a valid Phone number." id="phone" name="MenuRequest.Phone" placeholder="Telephon number" type="tel" value="">
+                                <span class="field-validation-valid text-danger" data-valmsg-for="MenuRequest.Phone" data-valmsg-replace="true"></span>                               
+                    </div>
+                </div>
+                
+                <div class="col-sm-6">
+                     <div class="form-group input-half-right">
+                                <label for="email" class="inline-img-label control-label"><i class="fa fa-envelope"></i></label>
+                               <input class="form-control input-lg text-uppercase text-box single-line" data-val="true" data-val-required="The Email field is required." id="email" name="MenuRequest.Email" placeholder="E-mail" type="email" value="">
+                                <span class="field-validation-valid text-danger" data-valmsg-for="MenuRequest.Email" data-valmsg-replace="true"></span>
+                                
+                        </div>
+                </div>                      
+                            
+               <div class="col-sm-12">
+                   <div class="form-group">
+                        <label for="comment" class="inline-img-label control-label"><i class="fa fa-comment"></i></label>
+                        <textarea class="form-control input-lg text-box multi-line" id="comment" name="MenuRequest.Comment" placeholder="Bericht (Wat is de gelegenheid? Spesiale wensen)" rows="4"></textarea>
+                                
+                    </div>
+               </div> 
+               
+        <div class="modal-footer col-sm-12">
+        <a  class="font-bold btn btn-gray btn-round-xlg text-uppercase pull-left" data-step="previous"><i class="fa fa-long-arrow-left"></i> previous step</a>
+        <button type="button" class="font-bold btn btn-danger btn-round-xlg text-uppercase pull-right" data-step="finish"><i class="fa fa-check"></i> bevestig</button>
+        </div>
+                           
+        </section>
+        
+   
+  
+</form>
+                        <!-- ************************* end 2 step form **************** -->
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div>     
+    <!-- ****************************** end test modal ***************************************-->
+ 
+  
+    
     <div id="requestMenuDialogConfirmation" class="modal fade menurequest" tabindex="-1" role="dialog" aria-labelledby="label">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header modal-header-success">
-                    <div class="modal-title" id="label">
-
-                    </div>
-                </div>
                 <div class="modal-body">
-                    <h2>Bedankt voor uw aanvraag</h2>
+                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <div class="request-menu-confirm-msg">
+                        <h3><i class="fa fa-check"></i></h3>
+                        <h2>Bedankt voor uw aanvraag</h2>
                     <p>U hebt een e-mail met de details van uw vrijblijvende offerteaanvraag ontvangen. Wij nemen zo snel mogelijk contact met u op om te bevestigen of chef Chef Sophie van Oyen nog beschikbaar is op uw gewenste datum.</p>
-                </div>
-                <div class="modal-footer">
-                    <center>
-                        <button type="button" class="font-bold btn btn-black-transp btn-round-xlg text-uppercase" data-dismiss="modal">sluiten</button>
-                    </center>
+                    </div>
                 </div>
             </div>
         </div>
@@ -659,8 +668,29 @@ Sophie kwam binnen met al haar spullen, verzorgde een mooie, als in een restaura
         </div>
     </div>
 </footer>
+    <script src="Scripts/min-js/jquery-2.1.4.js"></script>
+    <script src="Scripts/spin.min.js"></script>
+
+    <script src="Scripts/globalize.js"></script>
+    
+    <script src="Scripts/min-js/jquery.steps.min.js"></script>
+    <script src="Scripts/stepsForm-script.js"></script>  
+     
+    <script src="Scripts/min-js/bootstrap.js"></script>
+    <script src="Scripts/min-js/bootstrap-datepicker.js"></script>
+    <script src="Scripts/min-js/respond.js"></script>
 
 
+    
+    
+    <script src="Scripts/custom-script.js"></script>
+
+    <script src="Scripts/min-js/modernizr-2.6.2.js"></script>
+    
+    <script src="Scripts/jquery.validate.js"></script>
+    <script src="Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="Scripts/jquery.validate.globalize.js"></script>
+    
     <script>
         var sOpts = {
             lines: 9,
@@ -695,11 +725,9 @@ Sophie kwam binnen met al haar spullen, verzorgde een mooie, als in een restaura
         <div class="rating-star pull-right"><span data-bind="css: { 'glyphicon-star-empty': $data < 2, 'glyphicon-star': $data >= 2 }" class="glyphicon"></span></div>
         <div class="rating-star pull-right"><span data-bind="css: { 'glyphicon-star-empty': $data < 1, 'glyphicon-star': $data >= 1 }" class="glyphicon"></span></div>
     </script>
-
-    <script src="Scripts/jquery.validate.js"></script>
-    <script src="Scripts/jquery.validate.unobtrusive.js"></script>
-    <script src="Scripts/jquery.validate.globalize.js"></script>
-
+    
+    
+    
     
     <script src="Scripts/perfect-scrollbar.jquery.js"></script>
 
@@ -710,6 +738,7 @@ Sophie kwam binnen met al haar spullen, verzorgde een mooie, als in een restaura
     <script src="Scripts/knockout.mapping-latest.debug.js"></script>
 
     <script src="Scripts/bootstrap-slider.js"></script>
+    
     <script src="ViewModels/Menu/MenuViewModel.js"></script>
     <script>
         $('.scrollable').perfectScrollbar();
@@ -746,11 +775,12 @@ Sophie kwam binnen met al haar spullen, verzorgde een mooie, als in een restaura
                 $('#date').datepicker('remove');
                 $('#date').datepicker('update');
             });
+            
+           
         });
         
     </script>
-
-
+   
     
 </body>
 </html>
